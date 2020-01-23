@@ -69,14 +69,18 @@ body {
     transform: translate(-50%, -50%);
       /* Not in relation to the parent element, but the element itself */
 
-    backface-visibility: hidden;
-      /* fixing the issue with the animation being jerky */
+    text-align: center;
+      /* this is to get the white button child to align center */
 
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+
+    backface-visibility: hidden;
+      /* fixing the issue with the animation being jerky */
+      margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -141,6 +145,38 @@ body {
 }
 
 /* pseudo-element styles are used to styles elements under a special condition */
-.btn:link { 
+/* 'link' is a special state of a selector when the element is an anchor element */
+.btn:link,
+.btn:visited { 
+    text-transform: uppercase;
+    text-decoration: none;
+      
+    display: inline-block;
+    /* default display is inline */
+    /* display must be inline-block if you want to add width, padding, or height */
 
+    border-radius: 100px;
+
+    /* animation */
+    /* 'all' properties are enabled to be animated */
+    /* a .2s delay is applied to the button animation */
+    transition: all .2s;
+    
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+/* When the btn is pressed */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+    padding: 15px 40px;
 }
