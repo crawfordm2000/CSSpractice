@@ -237,5 +237,5 @@ body {
     animation: moveInBottom .7s ease-out .75s;
     animation-fill-mode: backwards;
       /* auto applies the styles of the 0% before the animation starts  */
-      /* test */
+      /* testing */
 }
