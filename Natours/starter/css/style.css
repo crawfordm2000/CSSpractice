@@ -14,15 +14,21 @@ Dark green: #28b485
       /* borders and padding are included within the total width and height */
 }
 
+/*  setting global font size in order to use rem units and have more control over mobile breakpoints */
+html {
+    font-size: 10px; 
+    /* 10px bc it is easier to calculate the rem units in other locations */
+}
+
 /* placing font within the body tag because of inheritance */
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1.7;
     color: #777;
-    padding: 30px; 
+    padding: 3rem; 
         /* a method of applying a border to the entire webpage */
 }
 
@@ -47,12 +53,12 @@ body {
 .logo-box {
     position: absolute;
       /* Allows us to use top, bottom, left and right properties */
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
       /* width scales accordingly */
 }
 
@@ -80,14 +86,14 @@ body {
 
     backface-visibility: hidden;
       /* fixing the issue with the animation being jerky */
-      margin-bottom: 60px;
+      margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 700;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 3s;
@@ -104,9 +110,9 @@ body {
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.74rem;
 
     animation: moveInRight 3s ease-out;
 }
@@ -114,11 +120,11 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100% {
@@ -131,11 +137,11 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     100% {
@@ -167,7 +173,7 @@ body {
     /* default display is inline */
     /* display must be inline-block if you want to add width, padding, or height */
 
-    border-radius: 100px;
+    border-radius: 10rem;
 
     /* animation */
     /* 'all' properties are enabled to be animated */
@@ -182,20 +188,20 @@ body {
 }
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-.3rem);
     box-shadow: 0 10px 20px rgba(0,0,0,.2);
 }
 
 /* When the btn is pressed */
 .btn:active {
-    transform: translateY(-1px);
+    transform: translateY(-.1rem);
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
 .btn-white {
     background-color: #fff;
     color: #777;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
 }
 
 /* pseudo elements allow us to style certain parts of an element */
@@ -212,7 +218,7 @@ body {
     height: 100%;
         /* 100% of the height of the button (parent) */
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
         /* in order to get the pseudo element behind the button */
     top: 0;
