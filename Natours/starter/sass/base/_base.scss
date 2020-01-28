@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*  setting global font size in order to use rem units and have more control over mobile breakpoints */
+html {
+  font-size: 62.5%;
+  /*  set to % so the user can override the font size if needed */
+  /* 10px / 16px = 62.5% - 10px bc it is easier to calculate the rem units in other locations */
+}
+
+/* placing font within the body tag because of inheritance */
+
+body {
+  box-sizing: border-box;
+    /* borders and padding are included within the total width and height */
+}

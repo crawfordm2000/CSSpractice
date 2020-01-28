@@ -1,0 +1,87 @@
+.btn {
+
+    /* pseudo-element styles are used to styles elements under a special condition */
+    /* 'link' is a special state of a selector when the element is an anchor element */
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+  
+      display: inline-block;
+      /* default display is inline */
+      /* display must be inline-block if you want to add width, padding, or height */
+  
+      border-radius: 10rem;
+  
+      /* animation */
+      /* 'all' properties are enabled to be animated */
+      /* a .2s delay is applied to the button animation */
+      transition: all 0.2s;
+  
+      position: relative;
+      /* to hide the psuedo element created for the animation */
+  
+      font-size: 1.6rem;
+    }
+  
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 10px 20px rgba($color-black, 0.2);
+      // in sass, you can set a hex color within the rgba function
+  
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+        /* fading out, causes the pseudo element to dissapear */
+      }
+    }
+  
+    /* When the btn is pressed */
+    &:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 5px 10px rgba($color-black, 0.2);
+    }
+  
+    &--white {
+      background-color: $color-white;
+      color: $color-grey-dark;
+      padding: 1.5rem 4rem;
+  
+      &::after {
+        background-color: $color-white;
+      }
+    }
+  
+    /* pseudo elements allow us to style certain parts of an element */
+    /* the :after adds a virtual element right after the element we're selecting */
+  
+    /* adding an element that looks exactly like the button behind the button */
+    /*  it will appear when hovered and dissapear */
+    /*  the pseudo element is treated like the child of the parent element  */
+    &::after {
+      content: "";
+      /* required, even when there is no content */
+      display: inline-block;
+      /* bc the button itself is inline block */
+      height: 100%;
+      /* 100% of the height of the button (parent) */
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      /* in order to get the pseudo element behind the button */
+      top: 0;
+      left: 0;
+      z-index: -1;
+      /* places the pseudo element direclty behind the button */
+  
+      transition: all 0.4s;
+    }
+  
+    &--animated {
+      animation: moveInBottom 0.7s ease-out 0.75s;
+      animation-fill-mode: backwards;
+      /* auto applies the styles of the 0% before the animation starts  */
+      /* testing */
+    }
+  }
+  

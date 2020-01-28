@@ -1,0 +1,45 @@
+.header {
+    height: 95vh;
+    /* 95% of the viewport height */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.801),
+        rgba($color-primary-dark, 0.795)
+      ),
+      url(../img/hero-small.jpg);
+    background-size: cover;
+    background-position: top;
+    /* when resizing the image the bottom will crop, not the top */
+    position: relative;
+    /* Gives the child element (positioned absolute) a reference point to apply top, bottom, left, and right props */
+  
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  
+    &__logo-box {
+      position: absolute;
+      /* Allows us to use top, bottom, left and right properties */
+      top: 4rem;
+      left: 4rem;
+    }
+  
+    &__logo {
+      height: 3.5rem;
+      /* width scales accordingly */
+    }
+    /* .logo:hover {
+          animation: moveInLeft 2s ease-out;
+      } */
+  
+    &__text-box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      /* 50% of the width of the parent element (header) */
+  
+      transform: translate(-50%, -50%);
+      /* Not in relation to the parent element, but the element itself */
+  
+      text-align: center;
+      /* this is to get the white button child to align center */
+    }
+  }
